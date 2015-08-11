@@ -1,0 +1,84 @@
+##
+ # more secure etckeeper...
+ ##
+
+# extraneous files
+
+*.gz
+*.bz2
+# etc/alternatives is full of links. some of them are to compressed executables
+# we keep those. Anything in the directory is a shortcut
+!alternatives/*
+
+*.lock
+*.fuselock
+*.bak
+*-bak
+localtime
+README
+
+# binaries
+
+X11/X
+java/*gcj
+
+# password files and security hashes
+
+group
+group-
+group.*
+gshadow
+gshadow-
+gshadow.*
+passwd
+passwd-
+passwd.*
+shadow
+shadow-
+shadow.*
+
+# password history file
+security/opasswd
+
+apt/trusted.*
+apt/trusted.gpg.d/*
+
+ssh/*key
+ssh/*key.pub
+ssh/moduli
+ssl/certs/*
+ssl/private/*
+
+#java/security/*
+
+# security leaks
+
+# these are probably in something like /opt/chrome/native-messaging-hosts/,
+# or chromium/native-messaging-hosts/
+# but we want this generalized.
+com.lastpass.nplastpass.json
+nplastpass64
+# these were in /opt/chrome/policies/managed/, & chromium/policies/managed/.
+lastpass_policy.json
+
+##
+ # tinfoil-hat etckeeper
+ ##
+ 
+# pam.d/common-password
+# pam.d/system-auth
+
+# or better
+pam.d
+pam.conf
+
+# probably OK, but should look into security implications
+
+#subgid
+#subgid-
+#subuid
+#subuid-
+
+##
+ # regular etckeeper
+ ##
